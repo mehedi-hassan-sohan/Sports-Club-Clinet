@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities;  
+/* Image Grid */
+.image-grid {
+    padding: 12px;
+  }
+  
+  .image-row {
+    display: flex;
+  }
+  
+  .image-row .image {
+    margin: 14px;
+    height: 240px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  .image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
+      0 6px 20px rgba(0, 0, 0, 0.15),
+      0 6px 20px rgba(0, 0, 0, 0.7);
+  }
+  
+  .image-01 {
+    background-image: url('https://i.ibb.co/LnyPYYm/full-shot-kids-team-posing-23-2149457265.jpg');
+    flex: 1;
+  }
+  
+  .image-02 {
+    background-image: url('https://i.ibb.co/KNV8MFy/men-playing-rugby-field-23-2150062005.jpg');
+    flex: 1;
+  }
+  
+  .image-03 {
+    background-image: url('https://i.ibb.co/WGbdPHz/low-angle-team-putting-hands-together-23-2149457259.jpg');
+    flex: 2;
+  }
+  
+  .image-04 {
+    background-image: url('https://i.ibb.co/kmcG4YW/young-basketball-players-take-break-after-game-183219-2426.jpg');
+    flex: 1;
+  }
+  
+  .image-05 {
+    background-image: url('https://i.ibb.co/k5tKvHb/portrait-group-girls-boy-as-tennis-players-holding-tennis-rackets-against-green-grass-outdoor-court.jpg');
+    flex: 2;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 400px) {
+    .image-row {
+      flex-direction: column;
+    }
+  
+    .image-row .image {
+      flex-basis: auto;
+    }
+  }
+  

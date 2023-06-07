@@ -1,0 +1,38 @@
+[
+    {
+      "title": "Yoga",
+      "image": "https://i.ibb.co/GVctd9c/woman-sitting-yoga-lotus-pose-her-connection-space-generative-ai-191095-1980.jpg",
+      "description": "Relax and rejuvenate with our invigorating yoga classes.  Whether you're a beginner or an experienced practitioner, our classes offer a welcoming and supportive environment for all levels.",
+      "students": 150
+    },
+    {
+      "title": "Swimming",
+      "image": "https://i.ibb.co/3prgs8M/five-swimmers-racing-against-each-other-swiming-pool-171337-7818.jpg",
+      "description": "Dive into the refreshing pool and learn swimming techniques from our expert instructors.",
+      "students": 120
+    },
+    {
+      "title": "Tennis",
+      "image": "https://i.ibb.co/HtwBx26/tennis-girl-professional-tennis-court-654080-1256.jpg",
+      "description": "Sharpen your tennis skills with professional coaching in our world-class tennis courts.",
+      "students": 100
+    },
+    {
+      "title": "Cycling",
+      "image": "https://i.ibb.co/H2T4w0C/backside-cyclists-ride-bicycle-sunset-time-background-36326-14.jpg",
+      "description": "Explore the scenic routes and enjoy adventurous cycling expeditions. Exploring scenic routes and embarking on adventurous cycling expeditions can be an exhilarating experience. ",
+      "students": 90
+    },
+    {
+      "title": "Martial Arts",
+      "image": "https://img.freepik.com/free-photo/people-outdoors-nature-training-taekwondo_23-2149908473.jpg?w=1380&t=st=1686146050~exp=1686146650~hmac=a9d5cb963cfb05bcbe43d6f35ad2eadd8a87c24b61590b6c448a93b47dfeb054",
+      "description": "Learn self-defense techniques and improve your fitness with our martial arts classes.",
+      "students": 80
+    },
+    {
+      "title": "Basketball",
+      "image": "https://i.ibb.co/D80WwBt/black-professional-black-basketball-player-action-basketball-court-613910-553.jpg",
+      "description": "Get ready to dribble, shoot, and score with our exciting basketball sessions! Whether you're a beginner looking to learn the fundamentals or an experienced player aiming to enhance your skills, ",
+      "students": 70
+    }
+  ]
