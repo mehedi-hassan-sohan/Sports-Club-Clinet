@@ -15,11 +15,11 @@ const Navbar = () => {
 
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Class</Link></li>
-        <li><Link to="/order/salad">Instructor</Link></li>
+        <li><Link to="/class">Class</Link></li>
+        <li><Link to="/allinstructor">Instructor</Link></li>
         
         <li>
-            <Link to="/dashboard/mycart">
+            <Link to="/">
              
             </Link>
         </li>

@@ -4,7 +4,7 @@ const PopularInstructors = () => {
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
-    fetch('PopularInstructor.json')
+    fetch('http://localhost:5000/instructor')
       .then((res) => res.json())
       .then((data) => setTeachers(data));
   }, []);
