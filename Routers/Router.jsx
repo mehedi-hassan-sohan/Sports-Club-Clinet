@@ -1,45 +1,50 @@
-import {
-    createBrowserRouter,
-    
-  } from "react-router-dom"; 
+import { createBrowserRouter, } from "react-router-dom";
 import Main from "../src/Layouts/Main";
 import Login from "../src/Login/Login";
 import SignUp from "../src/Singup/SingUp";
 import Home from "../src/Components/Home/Home";
 import AllClass from "../src/pages/AllClass";
 import AllInstructor from "../src/pages/Allinstructor";
+import Dashboard from "../src/Layouts/Dashboard";
+import Myclass from "../src/pages/Dashboard/Myclass";
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children:[{
-        path:'/',
-         element: <Home></Home>
-      }, 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
       {
-        path:'/class' ,
-        element:<AllClass></AllClass>,
-      
+        path: '/',
+        element: <Home></Home>
       },
       {
-        path:'/allinstructor' ,
-        element:<AllInstructor></AllInstructor>,
-      
+        path: '/class',
+        element: <AllClass></AllClass>,
       },
       {
-          path:'/login',
-          element:<Login></Login>
-          
+        path: '/allinstructor',
+        element: <AllInstructor></AllInstructor>,
       },
       {
-          path:'/singup',
-          element:<SignUp></SignUp>
-          
+        path: '/login',
+        element: <Login></Login>
       },
-  ]}
-      
-    
-  ]);  
+      {
+        path: '/singup',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+          {
+            path: 'myclass',
+            element: <Myclass></Myclass>
+          }
+        ]
+      }
+    ]
+  },
+]);
 
- export default router
+export default router;

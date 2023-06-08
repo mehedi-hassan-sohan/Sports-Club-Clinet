@@ -3,8 +3,8 @@ import React from 'react';
 const Slider = () => {
   return (
     <div>
-      <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
+      <div className="carousel w-full relative z-0">
+        <div id="slide1" className="carousel-item relative  w-full">
           <img
             src="https://i.ibb.co/VSxnQF6/lovepik-asian-games-background-image-400483262.jpg"
             alt="Asian Games"
