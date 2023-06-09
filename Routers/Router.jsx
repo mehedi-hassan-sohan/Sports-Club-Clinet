@@ -6,7 +6,8 @@ import Home from "../src/Components/Home/Home";
 import AllClass from "../src/pages/AllClass";
 import AllInstructor from "../src/pages/Allinstructor";
 import Dashboard from "../src/Layouts/Dashboard";
-import Myclass from "../src/pages/Dashboard/Myclass";
+import Myclass from "../src/pages/Dashboard/Students/Myclass";
+import Payment from "../src/pages/Dashboard/Students/Payment";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
           {
             path: 'myclass',
             element: <Myclass></Myclass>
+          },
+          {
+            path: 'payment',
+            element: <Payment></Payment>
           }
         ]
       }
