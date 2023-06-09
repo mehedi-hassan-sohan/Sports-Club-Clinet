@@ -7,7 +7,9 @@ import AllClass from "../src/pages/AllClass";
 import AllInstructor from "../src/pages/Allinstructor";
 import Dashboard from "../src/Layouts/Dashboard";
 import Myclass from "../src/pages/Dashboard/Students/Myclass";
-import Payment from "../src/pages/Dashboard/Students/Payment";
+import Payment from "../src/pages/Dashboard/Students/payment/Payment";
+import AllUser from "../src/pages/Dashboard/Admin/AllUser";
+
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
           {
             path: 'payment',
             element: <Payment></Payment>
+          },
+          {
+            path:'allusers',
+            element:<AllUser></AllUser>
           }
         ]
       }
