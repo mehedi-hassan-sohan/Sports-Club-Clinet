@@ -9,12 +9,15 @@ import Dashboard from "../src/Layouts/Dashboard";
 import Myclass from "../src/pages/Dashboard/Students/Myclass";
 import Payment from "../src/pages/Dashboard/Students/payment/Payment";
 import AllUser from "../src/pages/Dashboard/Admin/AllUser";
+import AddClass from "../src/pages/Dashboard/Inistactor/AddClass";
+import Errors from "../src/Components/ErrorPage/Error";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    element: <Main></Main>, 
+    errorElement:<Errors></Errors>,
     children: [
       {
         path: '/',
@@ -51,6 +54,10 @@ const router = createBrowserRouter([
           {
             path:'allusers',
             element:<AllUser></AllUser>
+          } ,
+          {
+            path:'addclass',
+            element:<AddClass></AddClass>
           }
         ]
       }

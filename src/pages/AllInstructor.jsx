@@ -31,7 +31,7 @@ const AllInstructor = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Classes Taken</th>
-            <th>Picture</th>
+        
             <th></th>
           </tr>
         </thead>
@@ -46,23 +46,11 @@ const AllInstructor = () => {
               <td>{instructor.name}</td>
               <td>{instructor.email}</td>
               <td>{instructor.classes_taken}</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
             </tr>
           ))}
         </tbody>
         {/* foot */}
-        <tfoot>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Classes Taken</th>
-            <th>Picture</th>
-            <th></th>
-          </tr>
-        </tfoot>
+       
       </table>
     </div>
   );
