@@ -6,12 +6,13 @@ const AllUser = () => {
   const [students, setStudents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [adminClicked, setAdminClicked] = useState(false);
+  const [instructorClicked, setInstructorClicked] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch('http://localhost:5000/students');
-        
         const data = await res.json();
         setStudents(data);
         setIsLoading(false);
@@ -30,26 +31,46 @@ const AllUser = () => {
 
   if (isError) {
     return <p>Error occurred while fetching students data.</p>;
-  } 
-
+  }
 
   const handleMakeAdmin = (student) => {
     fetch(`http://localhost:5000/students/admin/${student._id}`, {
       method: 'PATCH'
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      if (data.modifiedCount) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: `${student.name} is an Admin Now!`,
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `${student.name} is an Admin Now!`,
+            showConfirmButton: false,
+            timer: 1500
+          });
+          setAdminClicked(true);
+        }
+      });
+  };
+
+  const handleMakeInstructor = (student) => {
+    fetch(`http://localhost:5000/students/instructor/${student._id}`, {
+      method: 'PATCH',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `${student.name} is an Instructor Now!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setInstructorClicked(true);
+        }
+      });
   };
   
   return (
@@ -61,8 +82,7 @@ const AllUser = () => {
             <th></th>
             <th>Name</th>
             <th>Email</th>
-            <th>role</th>
-           
+            <th>Role</th>
           </tr>
         </thead>
         <tbody>
@@ -71,14 +91,40 @@ const AllUser = () => {
               <th>{index + 1}</th>
               <td>{student.name}</td>
               <td>{student.email}</td>
-              <td>{student.role==='admin'?'admin':<FaUserShield onClick={()=>handleMakeAdmin(student)} 
-                
-              className='text-orange-500' fontSize={20}></FaUserShield>}</td>
-             
+              <td>
+                {student.role === 'admin' ? (
+                  'admin'
+                ) : (
+                  <>
+                    {!adminClicked && (
+                      <button
+                        onClick={() => handleMakeAdmin(student)}
+                        className="btn btn-primary bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                      >
+                        Make Admin
+                      </button>
+                    )}
+                  </>
+                )}
+                {student.role === 'instructor' ? (
+                  'instructor'
+                ) : (
+                  <>
+                    {!instructorClicked && (
+                      <button
+                        onClick={() => handleMakeInstructor(student)}
+                        className="btn btn-primary bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                      >
+                        Make Instructor
+                      </button>
+                    )}
+                  </>
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
-      </table> 
+      </table>
     </div>
   );
 };

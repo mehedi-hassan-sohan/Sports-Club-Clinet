@@ -11,6 +11,7 @@ import Payment from "../src/pages/Dashboard/Students/payment/Payment";
 import AllUser from "../src/pages/Dashboard/Admin/AllUser";
 import AddClass from "../src/pages/Dashboard/Inistactor/AddClass";
 import Errors from "../src/Components/ErrorPage/Error";
+import AdminRoutes from "../Provider/AdminRoute";
 
 
 const router = createBrowserRouter([
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
           },
           {
             path:'allusers',
-            element:<AllUser></AllUser>
+            element:<AdminRoutes><AllUser></AllUser></AdminRoutes>
           } ,
           {
             path:'addclass',

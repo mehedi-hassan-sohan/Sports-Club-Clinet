@@ -13,12 +13,7 @@ const Home = () => {
   };
 
   return (
-    <div className={isDarkMode ? 'dark' : 'light'}>
-      <DarkModeToggle
-        onChange={handleDarkModeToggle}
-        checked={isDarkMode}
-        size={50}
-      />
+    <div>
       <Slider></Slider>
       <PopularClass></PopularClass>
       <PopularInstructors></PopularInstructors>

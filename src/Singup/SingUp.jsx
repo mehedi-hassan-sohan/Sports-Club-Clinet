@@ -10,7 +10,7 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors }, watch } = useForm();
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -28,7 +28,7 @@ const SignUp = () => {
   };
 
   const onSubmit = (data) => {
-    if (data.password === confirmPassword) {
+    if (data.password === data.confirmPassword) {
       createUser(data.email, data.password)
         .then(result => {
           const loggedUser = result.user;
@@ -68,6 +68,7 @@ const SignUp = () => {
       });
     }
   };
+  
 
   return (
     <>
@@ -133,7 +134,7 @@ const SignUp = () => {
                     <div className='flex gap-3'>
                       <input type={showConfirmPassword ? "text" : "password"} {...register("confirmPassword", {
                         required: true,
-                        validate: value => value === confirmPassword || "Passwords do not match"
+                        validate: value => value === watch('password') || "Passwords do not match"
                       })} placeholder="Confirm password" className="input input-bordered flex justify-center items-center gap-2" />
                       {showConfirmPassword ? (
                         <FaEye className='mt-5' onClick={toggleConfirmPasswordVisibility} />
