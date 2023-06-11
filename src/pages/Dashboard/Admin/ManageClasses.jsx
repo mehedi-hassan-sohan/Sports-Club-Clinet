@@ -46,7 +46,7 @@ const ManageClasses = () => {
     // You can open a modal or form to input the feedback and make an API call to send it
   };
 
-  return (
+   return (
     <div className="overflow-x-auto">
       <table className="table">
         {/* head */}
