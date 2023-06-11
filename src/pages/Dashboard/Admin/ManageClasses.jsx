@@ -37,7 +37,7 @@ const ManageClasses = () => {
       // Handle successful denial
       fetchClasses();
     } catch (error) {
-      console.error(error);
+       console.error(error);
     }
   };
 
