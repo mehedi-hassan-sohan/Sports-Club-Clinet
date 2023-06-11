@@ -38,7 +38,7 @@ const Dashboard = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/mycart">
+                  <Link to="/dashboard/manageuser">
                     <FaUserCog /> Manage Classes:
                   </Link>
                 </li>
@@ -57,7 +57,7 @@ const Dashboard = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/mycart">
+                  <Link to="/dashboard/myclassins">
                     <FaBookReader /> My Classes
                   </Link>
                 </li>
@@ -71,12 +71,12 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <Link to="/dashboard/myclass">
-                    <FaBookmark /> My Enrolled Classes
+                    <FaBookmark /> My Selected Classes
                   </Link>
                 </li>
                 <li>
                   <Link to="/dashboard/mycart">
-                    <FaShoppingCart /> My Selected Classes
+                    <FaShoppingCart />My Enrolled Classes 
                   </Link>
                 </li>
               </>

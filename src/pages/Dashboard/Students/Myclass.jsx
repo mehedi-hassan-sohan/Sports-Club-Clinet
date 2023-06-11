@@ -19,7 +19,7 @@ const Myclass = () => {
       showConfirmButton: false
     });
   };
-
+    console.log(bookedClasses);
   return (
     <div className="xl:p-10">
       <h1 className="text-3xl font-bold mb-4">My Booked Classes</h1>
@@ -42,21 +42,22 @@ const Myclass = () => {
             <tbody>
               {bookedClasses.map((classItem) => (
                 <tr key={classItem.id}>
-                  <td className="w-64">
+                  <td className="w-64"> 
                     <img src={classItem.image} alt={classItem.title} className="h-22 w-32 object-cover" />
                   </td>
                   <td className="text-md">{classItem.title}</td>
                   <td className="text-md">{classItem.instructor}</td>
                   <td className="text-md">{classItem.price}</td>
                   <td>
-                   <Link to='/dashboard/payment'> 
-                   <button  className="btn btn-primary bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Pay Now</button>
-                   </Link>
+                    <Link to={`/dashboard/payment/${classItem.id}`}>
+                      <button className="btn btn-primary bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Pay Now</button>
+                    </Link>
+
                   </td>
                   <td className="text-2xl">
                     <FaRegTrashAlt onClick={() => handleDeleteClass(classItem.id)} />
-                  </td> 
-                
+                  </td>
+
                 </tr>
               ))}
             </tbody>

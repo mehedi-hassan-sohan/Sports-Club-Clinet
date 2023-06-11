@@ -12,6 +12,8 @@ import AllUser from "../src/pages/Dashboard/Admin/AllUser";
 import AddClass from "../src/pages/Dashboard/Inistactor/AddClass";
 import Errors from "../src/Components/ErrorPage/Error";
 import AdminRoutes from "../Provider/AdminRoute";
+import MyClasseIns from "../src/pages/Dashboard/Inistactor/MyClasseIns";
+import ManageClasses from "../src/pages/Dashboard/Admin/ManageClasses";
 
 
 const router = createBrowserRouter([
@@ -49,16 +51,27 @@ const router = createBrowserRouter([
             element: <Myclass></Myclass>
           },
           {
-            path: 'payment',
-            element: <Payment></Payment>
+            path: 'payment/:id',
+            element: <Payment></Payment>,
+            loader:({params})=>fetch(`http://localhost:5000/classes/${params.id}`)
+       
+            
           },
           {
             path:'allusers',
             element:<AdminRoutes><AllUser></AllUser></AdminRoutes>
           } ,
           {
+            path:'manageuser',
+            element:<ManageClasses></ManageClasses>
+          },
+          {
             path:'addclass',
             element:<AddClass></AddClass>
+          },
+          {
+            path:'myclassins',
+            element:<MyClasseIns></MyClasseIns>
           }
         ]
       }
