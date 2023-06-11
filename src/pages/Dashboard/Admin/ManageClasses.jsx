@@ -61,7 +61,7 @@ const ManageClasses = () => {
             <th>Class Name</th>
             <th>Available Seats</th>
             <th>Price</th>
-            <th>Status</th>
+             <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
