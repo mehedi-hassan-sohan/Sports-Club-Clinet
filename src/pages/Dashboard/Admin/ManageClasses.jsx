@@ -24,7 +24,7 @@ const ManageClasses = () => {
       });
       // Handle successful approval
       fetchClasses();
-    } catch (error) {
+     } catch (error) {
       console.error(error);
     }
    };
