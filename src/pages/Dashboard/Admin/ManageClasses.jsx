@@ -65,7 +65,7 @@ const ManageClasses = () => {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+         <tbody>
           {classes.map(classData => (
             <tr key={classData._id}>
               <th>
