@@ -18,7 +18,7 @@ const ManageClasses = () => {
   };
 
   const handleApprove = async (classId) => {
-    try {
+     try {
       const response = await axios.patch(`/students/instructors/${classId}`, {
         status: 'approved'
       });
