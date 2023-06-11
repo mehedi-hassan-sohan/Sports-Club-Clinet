@@ -27,7 +27,7 @@ const ManageClasses = () => {
      } catch (error) {
       console.error(error);
     }
-   };
+    };
 
   const handleDeny = async (classId) => {
     try {
