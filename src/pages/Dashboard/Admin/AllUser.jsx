@@ -91,9 +91,10 @@ const AllUser = () => {
               <th>{index + 1}</th>
               <td>{student.name}</td>
               <td>{student.email}</td>
+             
               <td>
                 {student.role === 'admin' ? (
-                  'admin'
+                   <button className="btn" disabled="disabled">Admin</button>
                 ) : (
                   <>
                     {!adminClicked && (
@@ -106,14 +107,17 @@ const AllUser = () => {
                     )}
                   </>
                 )}
-                {student.role === 'instructor' ? (
-                  'instructor'
+                
+              </td> 
+              <td>
+              {student.role === 'instructor' ? (
+                 <button className="btn" disabled="disabled">Instructor</button>
                 ) : (
                   <>
                     {!instructorClicked && (
                       <button
                         onClick={() => handleMakeInstructor(student)}
-                        className="btn btn-primary bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                        className="btn btn-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
                       >
                         Make Instructor
                       </button>
@@ -121,6 +125,7 @@ const AllUser = () => {
                   </>
                 )}
               </td>
+             
             </tr>
           ))}
         </tbody>

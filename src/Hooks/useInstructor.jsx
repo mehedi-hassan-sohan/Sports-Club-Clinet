@@ -15,8 +15,7 @@ const useInstructor = () => {
           })
           const data = await response.json(); 
           console.log(data);
-          setIsInstructor(data.admin);
-          setIsInstructor(false);
+          setIsInstructor(data.instructor);
         } catch (error) {
           console.log(error); 
           setIsInstructor(false);

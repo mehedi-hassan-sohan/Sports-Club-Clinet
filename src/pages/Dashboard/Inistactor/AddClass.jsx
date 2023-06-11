@@ -4,7 +4,8 @@ import { AuthContext } from '../../../../Provider/AuthProvider';
 axios.defaults.baseURL = 'http://localhost:5000';
 
 const AddClass = () => { 
-  const {user} = useContext(AuthContext)  
+  const {user} = useContext(AuthContext) 
+    
   
 
   const [formData, setFormData] = useState({
@@ -70,15 +71,7 @@ const AddClass = () => {
           placeholder="Description"
           className="w-full mb-4 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
         />
-        <input
-          type="text"
-          name="email"
-          value={formData.students} 
         
-          onChange={handleChange}
-          placeholder="Email"
-          className="w-full mb-4 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
-        /> 
           <input
           type="text"
           name="instructor" 
