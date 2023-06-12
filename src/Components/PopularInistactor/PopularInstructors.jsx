@@ -4,7 +4,7 @@ const PopularInstructors = () => {
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/instructor')
+    fetch('https://assignment-12-server-ecru-chi.vercel.app/instructor')
       .then((res) => res.json())
       .then((data) => setTeachers(data));
   }, []);

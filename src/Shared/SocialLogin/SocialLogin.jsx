@@ -18,7 +18,7 @@ const SocialLogin = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 const saveStudent = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('http://localhost:5000/students', {
+                fetch('https://assignment-12-server-ecru-chi.vercel.app/students', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

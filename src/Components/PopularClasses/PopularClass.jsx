@@ -11,7 +11,7 @@ const PopularClass = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/classes');
+      const response = await axios.get('https://assignment-12-server-ecru-chi.vercel.app/classes');
       setClasses(response.data);
     } catch (error) {
       console.error('Error fetching classes:', error);

@@ -15,7 +15,7 @@ const CheckOutForm = ({data}) => {
 useEffect(() => {
 
  if(data?.price>0) {
-    fetch('http://localhost:5000/create-payment-intent', {
+    fetch('https://assignment-12-server-ecru-chi.vercel.app/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ setProcessing(false)
             
            }  
            
-           fetch('http://localhost:5000/payments', {
+           fetch('https://assignment-12-server-ecru-chi.vercel.app/payments', {
              method: 'POST',
              headers: {
                'Content-Type': 'application/json'

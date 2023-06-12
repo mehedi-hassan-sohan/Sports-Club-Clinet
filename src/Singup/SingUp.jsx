@@ -36,7 +36,7 @@ const SignUp = () => {
           updateUserProfile(data.name, data.photoURL)
             .then(() => {
               const saveStudent = { name: data.name, email: data.email };
-              fetch('http://localhost:5000/students', {
+              fetch('https://assignment-12-server-ecru-chi.vercel.app/students', {
                 method: 'POST',
                 headers: {
                   'content-type': 'application/json'

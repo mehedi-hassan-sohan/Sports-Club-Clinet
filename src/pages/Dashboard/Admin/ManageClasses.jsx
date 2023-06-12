@@ -10,7 +10,7 @@ const ManageClasses = () => {
 
   const fetchClasses = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/students/instructors');
+      const response = await axios.get('https://assignment-12-server-ecru-chi.vercel.app/students/instructors');
       setClasses(response.data);
     } catch (error) {
       console.error(error);
@@ -31,7 +31,7 @@ const ManageClasses = () => {
 
   const handleDeny = async (classId) => {
     try {
-      const response = await axios.patch(`http://localhost:5000//students/instructors/${classId}`, {
+      const response = await axios.patch(`https://assignment-12-server-ecru-chi.vercel.app//students/instructors/${classId}`, {
         status: 'denied'
       });
       // Handle successful denial

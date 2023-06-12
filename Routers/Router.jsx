@@ -11,11 +11,15 @@ import Payment from "../src/pages/Dashboard/Students/payment/Payment";
 import AllUser from "../src/pages/Dashboard/Admin/AllUser";
 import AddClass from "../src/pages/Dashboard/Inistactor/AddClass";
 import Errors from "../src/Components/ErrorPage/Error";
-import AdminRoutes from "../Provider/AdminRoute";
 import MyClasseIns from "../src/pages/Dashboard/Inistactor/MyClasseIns";
 import ManageClasses from "../src/pages/Dashboard/Admin/ManageClasses";
 import PaymentHistory from "../src/pages/Dashboard/Students/payment/PaymentHistory";
 import MyEnrollClass from "../src/pages/Dashboard/Students/MyEnrollClass";
+import AdminRoutes from "./AdminRoute";
+
+import InstructorRoutes from "./InstructorRoute";
+import PrivateRoutes from "./PrivateRoute";
+
 
 
 const router = createBrowserRouter([
@@ -46,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoutes> <Dashboard></Dashboard></PrivateRoutes>,
         children: [
           {
             path: 'myclass',
@@ -59,7 +63,7 @@ const router = createBrowserRouter([
           {
             path: 'payment/:id',
             element: <Payment></Payment>,
-            loader:({params})=>fetch(`http://localhost:5000/classes/${params.id}`)
+            loader:({params})=>fetch(`https://assignment-12-server-ecru-chi.vercel.app/classes/${params.id}`)
           
        
             
@@ -75,7 +79,7 @@ const router = createBrowserRouter([
           } ,
           {
             path:'manageuser',
-            element:<ManageClasses></ManageClasses>
+            element:<AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
           },
           {
             path:'addclass',

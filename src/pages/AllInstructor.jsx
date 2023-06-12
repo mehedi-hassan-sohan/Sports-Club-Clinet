@@ -10,7 +10,7 @@ const AllInstructor = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/instructor');
+      const response = await axios.get('https://assignment-12-server-ecru-chi.vercel.app/instructor');
       setInstructors(response.data);
     } catch (error) {
       console.error('Error fetching instructors:', error);

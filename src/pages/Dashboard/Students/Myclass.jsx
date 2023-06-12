@@ -19,6 +19,13 @@ const Myclass = () => {
       showConfirmButton: false
     });
   };
+  const handleDeleteClasss = (id) => {
+    const updatedClasses = bookedClasses.filter((classItem) => classItem.id !== id);
+    setBookedClasses(updatedClasses);
+    localStorage.setItem('bookedClasses', JSON.stringify(updatedClasses));
+
+   
+  };
     console.log(bookedClasses);
   return (
     <div className="xl:p-10">
@@ -50,7 +57,7 @@ const Myclass = () => {
                   <td className="text-md">{classItem.price}</td>
                   <td>
                     <Link to={`/dashboard/payment/${classItem.id}`}>
-                      <button className="btn btn-primary bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Pay Now</button>
+                       <button  onClick={() => handleDeleteClasss(classItem.id)} className="btn btn-primary bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Pay Now</button>
                     </Link>
 
                   </td>

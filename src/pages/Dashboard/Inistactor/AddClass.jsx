@@ -28,7 +28,7 @@ const AddClassForm = () => {
     console.log(classData);
 
     // Send the data to the backend
-    fetch('http://localhost:5000/students/instructors', {
+    fetch('https://assignment-12-server-ecru-chi.vercel.app/students/instructors', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

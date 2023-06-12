@@ -4,7 +4,7 @@ const MyEnrollClass = () => {
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/Payments')
+    fetch('https://assignment-12-server-ecru-chi.vercel.app/Payments')
       .then(response => response.json())
       .then(paymentData => {
         setPayments(paymentData);
@@ -18,7 +18,7 @@ const MyEnrollClass = () => {
     <div>
       <h1 className='mb-12'>My enroll Classes</h1>
       {payments.map(payment => (
-        <div   key={payment.transactionId} className=" grid grid-cols-2 ">
+        <div   key={payment.transactionId} className=" grid grid-cols-2 gap-10 my-10">
           <figure><img className='w-[300px] rounded-3xl' src={payment.image} /></figure>
           <div > 
             <h2 className='text-xl'>Email:{payment.email}</h2>

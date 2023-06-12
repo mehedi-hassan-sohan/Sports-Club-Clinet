@@ -46,7 +46,7 @@ const Dashboard = () => {
             ) : isInstructor ? (
               <>
                 <li>
-                  <Link to="/dashboard/myclass">
+                  <Link to="/dashboard/addclass">
                     <FaGraduationCap /> Instructor Home
                   </Link>
                 </li>

@@ -4,7 +4,7 @@ const MyClasseIns = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/students/instructors')
+    fetch('https://assignment-12-server-ecru-chi.vercel.app/students/instructors')
       .then(response => response.json())
       .then(classesData => {
         setClasses(classesData);

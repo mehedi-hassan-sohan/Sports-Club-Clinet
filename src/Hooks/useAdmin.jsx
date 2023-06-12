@@ -10,7 +10,7 @@ const useAdmin = () => {
     const fetchAdminStatus = async () => {
       if (!loading && user) {
         try {
-          const response = await fetch(`http://localhost:5000/students/admin/${user.email}`,{
+          const response = await fetch(`https://assignment-12-server-ecru-chi.vercel.app/students/admin/${user.email}`,{
             headers:{authorization:`bearer ${localStorage.getItem('access-token')}`}
           })
           const data = await response.json(); 

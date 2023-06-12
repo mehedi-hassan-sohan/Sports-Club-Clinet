@@ -12,7 +12,7 @@ const AllUser = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://localhost:5000/students');
+        const res = await fetch('https://assignment-12-server-ecru-chi.vercel.app/students');
         const data = await res.json();
         setStudents(data);
         setIsLoading(false);
@@ -34,7 +34,7 @@ const AllUser = () => {
   }
 
   const handleMakeAdmin = (student) => {
-    fetch(`http://localhost:5000/students/admin/${student._id}`, {
+    fetch(`https://assignment-12-server-ecru-chi.vercel.app/students/admin/${student._id}`, {
       method: 'PATCH'
     })
       .then((res) => res.json())
@@ -54,7 +54,7 @@ const AllUser = () => {
   };
 
   const handleMakeInstructor = (student) => {
-    fetch(`http://localhost:5000/students/instructor/${student._id}`, {
+    fetch(`https://assignment-12-server-ecru-chi.vercel.app/students/instructor/${student._id}`, {
       method: 'PATCH',
     })
       .then((res) => res.json())

@@ -75,7 +75,7 @@ const Login = () => {
                         type={showPassword ? "text" : "password"}
                         autoComplete="current-password"
                         required
-                        className="w-full px-3 py-2 rounded-xl mb-3"
+                        className="w-full px-3 py-2 rounded-xl input input-bordered  mb-3"
                         placeholder="Password"
                         {...register('password', { required: 'Password is required' })}
                       />
