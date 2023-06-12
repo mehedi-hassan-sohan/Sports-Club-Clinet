@@ -14,6 +14,8 @@ import Errors from "../src/Components/ErrorPage/Error";
 import AdminRoutes from "../Provider/AdminRoute";
 import MyClasseIns from "../src/pages/Dashboard/Inistactor/MyClasseIns";
 import ManageClasses from "../src/pages/Dashboard/Admin/ManageClasses";
+import PaymentHistory from "../src/pages/Dashboard/Students/payment/PaymentHistory";
+import MyEnrollClass from "../src/pages/Dashboard/Students/MyEnrollClass";
 
 
 const router = createBrowserRouter([
@@ -51,11 +53,21 @@ const router = createBrowserRouter([
             element: <Myclass></Myclass>
           },
           {
+            path: 'myenroll',
+            element:<MyEnrollClass></MyEnrollClass>
+          },
+          {
             path: 'payment/:id',
             element: <Payment></Payment>,
             loader:({params})=>fetch(`http://localhost:5000/classes/${params.id}`)
+          
        
             
+          }, 
+          {
+            path:'paymenthistory',
+            element:<PaymentHistory></PaymentHistory>
+
           },
           {
             path:'allusers',

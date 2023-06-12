@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAddressBook, FaBookReader, FaBookmark, FaCalendarAlt, FaGraduationCap, FaHome, FaShoppingCart, FaUserCog, FaUserSecret, FaUsers, FaWallet } from 'react-icons/fa';
+import { FaAddressBook, FaBookReader, FaBookmark, FaCalendarAlt, FaGraduationCap, FaHome, FaIdCard, FaShoppingCart, FaStripe, FaUserCog, FaUserSecret, FaUsers, FaWallet } from 'react-icons/fa';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 import useInstructor from '../Hooks/useInstructor';
@@ -75,8 +75,13 @@ const Dashboard = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/dashboard/mycart">
+                  <Link to="/dashboard/myenroll">
                     <FaShoppingCart />My Enrolled Classes 
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/paymenthistory">
+                    <FaStripe /> Payment History
                   </Link>
                 </li>
               </>

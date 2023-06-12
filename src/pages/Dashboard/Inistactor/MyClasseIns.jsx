@@ -15,24 +15,41 @@ const MyClasseIns = () => {
   }, []);
 
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row">
-        {classes.map(classData => (
-          <div key={classData._id} className="max-w-sm rounded-lg shadow-2xl bg-white m-4 p-6">
-            <img  src={classData.classImage} className="rounded-lg shadow-2xl w-[400px]" />
-            <div>
-              <h2 className="text-2xl font-bold mb-2">{classData.className}</h2>
-              <p className="text-gray-600">Available Seats: {classData.availableSeats}</p>
-              <p className="text-gray-600">Price: {classData.price}</p>
-              <p className="text-gray-600">Status: {classData.status}</p>
-              <p className="text-gray-600">Feedback: {classData.feedback}</p>
-          
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="overflow-x-auto">
+      <table className="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Class Name</th>
+            <th>Available Seats</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Feedback</th>
+          </tr>
+        </thead>
+        <tbody>
+          {classes.map(classData => (
+            <tr key={classData._id}>
+              <th>
+                <label>
+                  <input type="checkbox" className="checkbox" /> 
+
+                </label>
+              </th> 
+               <img className='w-[100px]' src={classData.classImage} alt="" />
+              <td>{classData.className}</td>
+              <td>{classData.availableSeats}</td>
+              <td>{classData.price}</td>
+              <td>{classData.status}</td>
+              <td>{classData.feedback}</td>
+            </tr>
+          ))}
+        </tbody>
+       
+      </table>
     </div>
   );
 };
 
 export default MyClasseIns;
+

@@ -3,17 +3,18 @@ import Slider from '../Silder/Slider';
 import PopularClass from '../PopularClasses/PopularClass';
 import PopularInstructors from '../PopularInistactor/PopularInstructors';
 import About from '../About/About';
-import DarkModeToggle from 'react-dark-mode-toggle';
+
+import { motion, useScroll } from "framer-motion";
 
 const Home = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const handleDarkModeToggle = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const { scrollYProgress } = useScroll();
 
   return (
     <div>
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
       <Slider></Slider>
       <PopularClass></PopularClass>
       <PopularInstructors></PopularInstructors>
